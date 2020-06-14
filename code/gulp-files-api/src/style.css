@@ -1,0 +1,199 @@
+/* 页面样式 */
+/* By Dpuer_wang */
+
+/* 通用样式*/
+body > .title {
+    position: fixed;
+    top: 60px;
+    left: 60px;
+    z-index: 99999;
+    color: #b8d1f7;
+    font-size: 50px;
+}
+.arrow {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    z-index: 9999;
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-left: -15px;
+    opacity: 1;
+    -webkit-transition: ease .3s all;
+    transition: ease .3s all;
+    -webkit-animation: arrow 1s infinite ease both;
+    animation: arrow 1s infinite ease both;
+}
+.arrow::before {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-bottom: 1px solid #b8d1f7;
+    border-left: 1px solid #b8d1f7;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    content: '';
+}
+.arrow::after {
+    position: absolute;
+    top: 5px;
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-bottom: 1px solid #b8d1f7;
+    border-left: 1px solid #b8d1f7;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    content: '';
+}
+.arrow.hide {
+    opacity: 0;
+}
+@-webkit-keyframes arrow
+{
+    0% { bottom: 30px; }
+    50% { bottom: 20px; }
+}
+@keyframes arrow
+{
+    0% { bottom: 30px; }
+    50% { bottom: 20px; }
+}
+
+/* 自定义导航菜单 */
+.leftMenu {
+    position: fixed;
+    top: 240px;
+    left: 60px;
+    z-index: 9999;
+    font-size: 30px;
+}
+.leftMenu .icon {
+    position: relative;
+    display: block;
+    width: 50px;
+    padding-top: 15px;
+    margin-left: 5px;
+    margin-bottom: 60px;
+    border-bottom: 5px solid #b8d1f7;
+}
+.leftMenu .icon::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: #b8d1f7;
+    content: '';
+}
+.leftMenu .icon::after {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: #b8d1f7;
+    content: '';
+}
+.leftMenu li {
+    display: block;
+    margin-bottom: 40px;
+    text-align: left;    
+}
+.leftMenu a {
+    display: inline-block;
+    padding: 10px;
+    color: #fff;
+    border: 2px solid transparent;
+}
+.leftMenu li.active a {
+    border: 2px solid #b8d1f7;
+}
+.rightMenu {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    z-index: 9999;
+    height: 340px;
+    margin-top: -170px;
+}
+.rightMenu a {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    margin-bottom: 56px;
+    background-color: #8e8e8e;
+    background-clip: content-box;
+    border: 1px solid transparent;
+    border-radius: 100%;
+    -webkit-transition: all ease .7s;
+    transition: all ease .7s;
+}
+.rightMenu a.active {
+    background-color: #b8d1f7;
+    border: 1px solid #b8d1f7;
+}
+.rightMenu a::after {
+    position: absolute;
+    top: 24px;
+    left: 8px;
+    display: block;
+    width: 1px;
+    height: 48px;
+    background-color: #8e8e8e;
+    content: '';
+}
+.rightMenu a:last-child::after {
+    display: none;
+}
+
+/* 背景图片 */
+.section {
+    background-size: cover;
+}
+.page1 {
+    background-image: url(../images/1.png);
+}
+.page2 {
+    background-image: url(../images/2.png);
+}
+.page3 {
+    background-image: url(../images/3.png);
+}
+.page4 {
+    background-image: url(../images/4.png);
+}
+.page5 {
+    background-image: url(../images/5.png);
+}
+
+/* one page */
+.content {
+    padding-top: 23vh;
+    padding-left: 36.7vw;
+}
+.content .about-me {
+    width: 515px;
+    padding: 20px 10px 20px 80px;
+    color: #37363e;
+    background-color: #b8d1f7;
+}
+.content .about-me h1 {
+    margin-bottom: 30px;
+    font-family: EngraversMT;
+    font-size: 3.6rem;
+}
+.content .about-me .basic-group {
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+.content .about-me .basic-group .title {
+    font-size: 30px;
+}

@@ -1,0 +1,1154 @@
+/* 基础公共样式表 */
+/* By Dpuer */
+
+/* 
+ * 08-02	此次修订了一些冗余的样式，追加了部分之前疏漏的效果。
+ * 09-13	此次修订添加了部分简单的CSS3和HTML5的内容。
+ * 09-20	此次修订进一步加强了CSS书写的规范，增加了一些实用的样式区块以及CSS3的部分动画效果。
+ * 10-28	此次修订精简了部分不太通用的样式，并参考bootstrap框架增补了部分实用的效果。
+ * 11-06	彻底分离了CSS3的动画部分，修订了一些样式使用不方便的问题。
+ * 12-12	完成了下拉菜单的部分，并剔除了页面布局的部分。	
+ * 01-30	追加了一些html5标签的区块化重写，增加了2个针对移动端的功能,整合了normalize.css
+ * 03-17    剔除了融合JS模块的部分应该使文件更单薄，剔除了不常用的功能模块，记录了视网膜屏幕图片的解决方法
+ */
+
+/* 
+ *便于em的换算,定义1em = 10px
+ */
+html {
+  font-size: 62.5%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td,
+select,
+figure,
+menu {
+  padding: 0;
+  margin: 0;
+  word-wrap: break-word;
+  cursor: default;
+}
+
+body {
+  font-family: "microsoft yahei", "SimSun", tahoma, arial, \5b8b\4f53, sans-serif;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  background-color: #fff;
+}
+
+.container {
+  width: 100%;
+}
+
+/* 处理IE9及以下不识别hidden的问题 */
+[hidden] {
+  display: none;
+}
+
+/* 修正火狐下渲染的偏差 */
+hr {
+  height: 0;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* 修正浏览器中因为上下标引起的行高偏差 */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* 修正所有浏览器中未被继承的字体类型和大小 */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+/* 删除表格里单元格间的间距 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 统一块状元素的边距解析 */
+div,
+ul,
+li,
+a,
+p,
+span,
+dl,
+dt,
+dd,
+table,
+tr,
+dd,
+input,
+textarea,
+legend,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+footer {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+pre {
+  white-space: -moz-pre-wrap;
+  /* Mozilla, since 1999 */
+  white-space: -o-pre-wrap;
+  /* Opera 4-6 */
+  white-space: -pre-wrap;
+  /* Opera 7 */
+  white-space: pre-wrap;
+  /* css-3 */
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */
+}
+
+input,
+label,
+img,
+th {
+  vertical-align: middle;
+}
+
+address,
+cite,
+dfn,
+em,
+var {
+  font-style: normal;
+}
+
+/* 修正因body设定居中而产生的继承 */
+body div {
+  text-align: left;
+}
+
+/* 去除IMG在有链接的时候的边框 */
+img {
+  border: none;
+}
+
+/* 重新定义列表样式 */
+[class*="list"] {
+  list-style: none;
+}
+
+/* 需引入Font-Awesome字体图标后方有效 */
+[class*="lists"] {
+  list-style: none;
+  margin-left: 8px;
+  padding-left: 0;
+}
+
+[class*="lists"]>li:before {
+  margin-right: 7px;
+  font-family: 'FontAwesome';
+  font-size: 10px;
+}
+
+/* 星星 */
+.lists-star>li:before {
+  content: "\f005";
+}
+
+/* 对勾 */
+.lists-right>li:before {
+  content: "\f00c";
+}
+
+/* 左三角箭头 */
+.lists-caret>li:before {
+  content: "\f0da";
+}
+
+/* >箭头 */
+.lists-arrow-right>li:before {
+  content: "\f105";
+  font-size: 12px;
+}
+
+/* 重新定义big与small */
+big {
+  font-size: 24px;
+  font-size: 2.4rem;
+}
+
+small {
+  font-size: 12px;
+  font-size: 1.2rem;
+}
+
+/* 重新定义H标签 */
+h1,
+.h1 {
+  font-size: 34px;
+  font-size: 3.4rem;
+}
+
+h2,
+.h2 {
+  font-size: 26px;
+  font-size: 2.6rem;
+}
+
+h3,
+.h3 {
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+h4,
+.h4 {
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+h5,
+.h5 {
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+h6,
+.h6 {
+  font-size: 12px;
+  font-size: 1.2rem;
+}
+
+/* 重新定义加粗的样式 */
+/* normal:400 bold:800 */
+b {
+  font-weight: 600;
+}
+
+strong {
+  font-weight: 900;
+}
+
+/* 统一定义a样式 */
+a {
+  text-decoration: none;
+  color: #444;
+  outline: none;
+}
+
+a.underline {
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: none;
+}
+
+a.btn {
+  text-decoration: none
+}
+
+/* 显示&&隐藏 */
+.none {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.in-block {
+  display: inline-block;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+/* 清除浮动 */
+.clear {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:after {
+  display: block;
+  height: 0;
+  clear: both;
+  content: ".";
+  visibility: hidden;
+}
+
+/* 字体 */
+
+/* 
+ * 在其父标签上添加，用以解决inline-block下存在的莫名间距
+ */
+.f0 {
+  font-size: 0;
+}
+
+.f12 {
+  font-size: 12px;
+  font-size: 1.2rem;
+}
+
+.f14 {
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+.f16 {
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+.f18 {
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+.f20 {
+  font-size: 20px;
+  font-size: 2rem;
+}
+
+/* 常用的一些边距 */
+/* padding */
+.p-0 {
+  padding: 0;
+}
+
+.p-5 {
+  padding: 5px;
+}
+
+.p-10 {
+  padding: 10px;
+}
+
+.p-15 {
+  padding: 15px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.p-t-5 {
+  padding-top: 5px;
+}
+
+.p-t-10 {
+  padding-top: 10px;
+}
+
+.p-t-15 {
+  padding-top: 15px;
+}
+
+.p-t-20 {
+  padding-top: 20px;
+}
+
+.p-r-5 {
+  padding-right: 5px;
+}
+
+.p-r-10 {
+  padding-right: 10px;
+}
+
+.p-r-15 {
+  padding-right: 15px;
+}
+
+.p-r-20 {
+  padding-right: 20px;
+}
+
+.p-b-5 {
+  padding-bottom: 5px;
+}
+
+.p-b-10 {
+  padding-bottom: 10px;
+}
+
+.p-b-15 {
+  padding-bottom: 15px;
+}
+
+.p-b-20 {
+  padding-bottom: 20px;
+}
+
+.p-l-5 {
+  padding-left: 5px;
+}
+
+.p-l-10 {
+  padding-left: 10px;
+}
+
+.p-l-15 {
+  padding-left: 15px;
+}
+
+.p-l-20 {
+  padding-left: 20px;
+}
+
+/* margin */
+.m-0 {
+  margin: 0;
+}
+
+.m-5 {
+  margin: 5px;
+}
+
+.m-10 {
+  margin: 10px;
+}
+
+.m-15 {
+  margin: 15px;
+}
+
+.m-20 {
+  margin: 20px;
+}
+
+.m-t-5 {
+  margin-top: 5px;
+}
+
+.m-t-10 {
+  margin-top: 10px;
+}
+
+.m-t-15 {
+  margin-top: 15px;
+}
+
+.m-t-20 {
+  margin-top: 20px;
+}
+
+.m-r-5 {
+  margin-right: 5px;
+}
+
+.m-r-10 {
+  margin-right: 10px;
+}
+
+.m-r-15 {
+  margin-right: 15px;
+}
+
+.m-r-20 {
+  margin-right: 20px;
+}
+
+.m-b-5 {
+  margin-bottom: 5px;
+}
+
+.m-b-10 {
+  margin-bottom: 10px;
+}
+
+.m-b-15 {
+  margin-bottom: 15px;
+}
+
+.m-b-20 {
+  margin-bottom: 20px;
+}
+
+.m-l-5 {
+  margin-left: 5px;
+}
+
+.m-l-10 {
+  margin-left: 10px;
+}
+
+.m-l-15 {
+  margin-left: 15px;
+}
+
+.m-l-20 {
+  margin-left: 20px;
+}
+
+/* 行高 */
+.lh20 {
+  line-height: 20px;
+}
+
+.lh24 {
+  line-height: 24px;
+}
+
+.lh30 {
+  line-height: 30px;
+}
+
+/*均分的浮动li*/
+.row-2 li {
+  float: left;
+  width: 50%;
+}
+
+.row-3 li {
+  float: left;
+  width: 33.33%;
+}
+
+.row-4 li {
+  float: left;
+  width: 25%;
+}
+
+.row-5 li {
+  float: left;
+  width: 20%;
+}
+
+/* 文本对齐 */
+.text-c {
+  text-align: center;
+}
+
+.text-l {
+  text-align: left;
+}
+
+.text-r {
+  text-align: right;
+}
+
+.text-t {
+  vertical-align: top;
+}
+
+.text-m {
+  vertical-align: middle;
+}
+
+.text-b {
+  vertical-align: bottom;
+}
+
+/*定位*/
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+/*浮动*/
+.pull-left {
+  float: left !important;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.col-left {
+  float: left;
+}
+
+.col-right {
+  float: right;
+}
+
+.col-auto {
+  float: auto !important;
+}
+
+/* 边框 */
+.border-t {
+  border-top-width: 1px !important;
+}
+
+.border-l {
+  border-left-width: 1px !important;
+}
+
+.border-r {
+  border-right-width: 1px !important;
+}
+
+.border-b {
+  border-bottom-width: 1px !important;
+}
+
+/* 由边框模拟的下划线 */
+.borderline {
+  border-bottom: 1px solid #cfcfcf;
+  overflow: hidden;
+}
+
+/* 由边框模拟的箭头 */
+.arrows {
+  height: 0;
+  width: 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+.arrows-t {
+  border-color: transparent transparent #666;
+  border-style: dashed dashed solid;
+  border-width: 0 6px 6px;
+}
+
+.arrows-b {
+  border-color: #666 transparent transparent;
+  border-style: solid dashed dashed;
+  border-width: 6px 6px 0;
+}
+
+/* 按钮 */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  -o-appearance: button;
+  appearance: button;
+}
+
+button[disabled],
+input[disabled],
+.disabled {
+  cursor: not-allowed;
+}
+
+/* 仿制的一些特色按钮 */
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 0 15px;
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.428571429;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  outline: none;
+}
+
+.btn:hover {
+  opacity: .8;
+}
+
+/*覆盖a标签按钮的默认样式*/
+a.btn:hover {
+  color: #fff;
+}
+
+a.btn-default:hover {
+  color: #333;
+}
+
+/*灰白色*/
+.btn-default,
+.btn-default:focus {
+  color: #333;
+  background-color: #fff;
+  background-image: linear-gradient(to bottom, #fff 60%, #f9f9f9 100%);
+  border-color: #ccc;
+}
+
+.btn-default:hover {
+  border-color: #000;
+  opacity: 1;
+}
+
+/*黄色*/
+.btn-yellow,
+.btn-yellow:focus {
+  background-color: #ffa800;
+  border-color: #d58512;
+}
+
+/*蓝色*/
+.btn-blue,
+.btn-blue:focus {
+  background-color: #4d90fd;
+  border-color: #3a8ace;
+}
+
+/*天蓝色*/
+.btn-info,
+.btn-info:focus {
+  background-color: #5fc8e7;
+  border-color: #28a1c4;
+}
+
+/*绿色*/
+.btn-green,
+.btn-green:focus {
+  background-color: #60c060;
+  border-color: #54a754;
+}
+
+/*红色*/
+.btn-red {
+  background-color: #e64d35;
+  border-color: #ac2925;
+}
+
+/*靛色*/
+.btn-indigo {
+  background-color: #0e90d2;
+  border-color: #0c80ba;
+}
+
+.btn.btn-indigo:hover {
+  background-color: #0b76ac;
+  border-color: #095f8a;
+  opacity: 1;
+}
+
+/* 水平区块 */
+dl.h {
+  display: inline-block;
+  width: 100%;
+}
+
+dl.h dt {
+  float: left;
+}
+
+dl.h dd {
+  float: left;
+}
+
+.mobile-h {
+  display: -webkit-box;
+}
+
+.mobile-h .one,
+.mobile-h .two,
+.mobile-h .three,
+.mobile-h .four,
+.mobile-h .five {
+  display: block;
+}
+
+.mobile-h .one {
+  -webkit-box-flex: 1;
+}
+
+.mobile-h .two {
+  -webkit-box-flex: 2;
+}
+
+.mobile-h .three {
+  -webkit-box-flex: 3;
+}
+
+.mobile-h .four {
+  -webkit-box-flex: 4;
+}
+
+.mobile-h .five {
+  -webkit-box-flex: 5;
+}
+
+/* 分割线 */
+.line {
+  height: 1px;
+  margin: 5px 0;
+  background-color: #ccc;
+  box-shadow: 0 1px 3px #ddd;
+}
+
+/* 清除浮动的分隔区块 */
+.blank10,
+.blank15,
+.blank20 {
+  display: block;
+  height: 20px;
+  overflow: hidden;
+  clear: both;
+}
+
+.blank15 {
+  height: 15px;
+}
+
+.blank10 {
+  height: 10px;
+}
+
+/* 很棒的阴影区块 */
+.well {
+  background-color: #fff;
+  border-left: 1px solid #efefef;
+  border-right: 1px solid #efefef;
+  border-bottom: 1px solid #e2e2e2;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, .04);
+}
+
+/* 用多层边框模拟的兼容IE6-8的阴影 */
+.better {
+  background-color: #fff;
+  border-right: 1px solid #eeeff0;
+  border-bottom: 2px solid #eeeff0;
+  border-left: 1px solid #eeeff0;
+  border-radius: 3px;
+}
+
+.better .betterInner {
+  border-top: 1px solid #eeeff0;
+  border-right: 1px solid #dbdcdc;
+  border-bottom: 1px solid #c8c8c9;
+  border-left: 1px solid #dbdcdc;
+}
+
+/* 常用宽度 */
+.w1600,
+.w1440,
+.w1024,
+.w960,
+.w768 {
+  width: 1600px;
+  margin: 0 auto;
+}
+
+.w1440 {
+  width: 1440px;
+}
+
+.w1024 {
+  width: 1024px;
+}
+
+.w960 {
+  width: 960px;
+}
+
+.w768 {
+  width: 768px;
+}
+
+/* 面包屑设置 */
+.breadcrumb li {
+  display: inline-block;
+}
+
+.breadcrumb li.active {
+  color: #999;
+}
+
+.breadcrumb li a {
+  display: block;
+  margin-right: 5px;
+  color: #0e90d2;
+}
+
+.breadcrumb li a:hover,
+.breadcrumb li a:focus {
+  color: #256a8d;
+}
+
+/*
+布局示例
+<ul class="breadcrumb">
+	<li>
+		<a href="#">首页</a>
+	</li>
+	<span class="punctuation">></span> 
+	<li>
+		<a href="#">二级</a>
+	</li>
+	<span class="punctuation">></span> 
+	<li>
+		<a href="#">三级</a>
+	</li>
+	<span class="punctuation">></span> 
+	<li class="active"></li>
+</ul>
+*/
+
+/* 分页设置 */
+.pagination li {
+  display: inline-block;
+}
+
+.pagination li:last-child {
+  margin-right: 0;
+}
+
+.pagination li a {
+  display: block;
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  color: #0e90d2;
+  line-height: 1.2;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: .2rem;
+}
+
+.pagination li.disable a,
+.pagination li.disable a:hover,
+.pagination li.disable a:focus {
+  color: #999;
+  background-color: #fff;
+  cursor: not-allowed;
+}
+
+.pagination li a:hover,
+.pagination li a:focus {
+  background-color: #eee;
+}
+
+.pagination li.active a,
+.pagination li.active a:hover,
+.pagination li.active a:focus {
+  color: #fff;
+  background-color: #0e90d2;
+  border-color: #0e90d2;
+  cursor: default;
+}
+
+/*
+布局示例
+若需要对其，另外添加文本对其样式
+<ul class="pagination">
+	<li class="disable">
+		<a href="#"><</a>
+	</li>
+	<li class="active">
+		<a href="#">1</a>
+	</li>
+	<li>
+		<a href="#">2</a>
+	</li>
+	<li>
+		<a href="#">></a>
+	</li>
+</ul>
+*/
+
+/* 透明 */
+.op3 {
+  filter: alpha(opacity=30);
+  -khtml-opacity: .3;
+  -moz-opacity: .3;
+  opacity: .3;
+}
+
+.op7 {
+  filter: alpha(opacity=70);
+  -khtml-opacity: .7;
+  -moz-opacity: .7;
+  opacity: .7;
+}
+
+/* 渐变 */
+.transition {
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+/* input效果重置设置 */
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="search"],
+textarea,
+select {
+  display: block;
+  width: 100%;
+  padding: 6px;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: .2rem;
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -moz-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+input[type="color"] {
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  cursor: pointer;
+}
+
+/* 设置一个很不错的焦点效果 */
+/* 用法：在input的外层form上增加shadow-form类 */
+.shadow-form input[type="text"]:focus,
+.shadow-form input[type="password"]:focus,
+.shadow-form input[type="date"]:focus,
+.shadow-form input[type="time"]:focus,
+.shadow-form input[type="datetime"]:focus,
+.shadow-form input[type="datetime-local"]:focus,
+.shadow-form input[type="month"]:focus,
+.shadow-form input[type="week"]:focus,
+.shadow-form input[type="email"]:focus,
+.shadow-form input[type="url"]:focus,
+.shadow-form input[type="tel"]:focus,
+.shadow-form input[type="search"]:focus,
+.shadow-form textarea:focus,
+.shadow-form select:focus {
+  background-color: #fafffe;
+  border-color: #0e90d2;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(14, 144, 210, .6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(14, 144, 210, .6);
+}
+
+/* 错误的效果 */
+.shadow-form input.error[type="text"],
+.shadow-form input.error[type="password"],
+.shadow-form input.error[type="date"],
+.shadow-form input.error[type="time"],
+.shadow-form input.error[type="datetime"],
+.shadow-form input.error[type="datetime-local"],
+.shadow-form input.error[type="month"],
+.shadow-form input.error[type="week"],
+.shadow-form input.error[type="email"],
+.shadow-form input.error[type="url"],
+.shadow-form input.error[type="tel"],
+.shadow-form input.error[type="search"],
+.shadow-form textarea.error,
+.shadow-form select.error,
+.shadow-form input.error[type="text"]:focus,
+.shadow-form input.error[type="password"]:focus,
+.shadow-form input.error[type="date"]:focus,
+.shadow-form input.error[type="time"]:focus,
+.shadow-form input.error[type="datetime"]:focus,
+.shadow-form input.error[type="datetime-local"]:focus,
+.shadow-form input.error[type="month"]:focus,
+.shadow-form input.error[type="week"]:focus,
+.shadow-form input.error[type="email"]:focus,
+.shadow-form input.error[type="url"]:focus,
+.shadow-form input.error[type="tel"]:focus,
+.shadow-form input.error[type="search"]:focus,
+.shadow-form textarea.error:focus,
+.shadow-form select.error:focus {
+  border-color: #f5033d;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(245, 3, 61, .6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(245, 3, 61, .6);
+}
+
+/* 有些时候我们需要用到行内的输入框 */
+input.inlineInput,
+select.inlineInput,
+textarea.inlineInput {
+  display: inline-block;
+  width: auto;
+}
+
+/* 移动端 webview 针对视网膜屏幕的兼容写法 */
+/*
+@media
+only screen and (-moz-min-device-pixel-ratio:1.5),
+only screen and (-o-min-device-pixel-ratio:3/2),
+only screen and (-webkit-min-device-pixel-ratio:1.5),
+only screen and (min-device-pixel-ratio:1.5),
+only screen and (min-resolution:1.5dppx) {
+
+}
+*/
