@@ -143,6 +143,16 @@ module.exports = (grunt) => {
             src: ["**"],
             dest: "dist/",
           },
+          {
+            expand: true,
+            src: ["temp/assets/styles/*"],
+            dest: "dist/assets/styles/",
+          },
+          {
+            expand: true,
+            src: ["temp/assets/scripts/*"],
+            dest: "dist/assets/scripts/",
+          },
         ],
       },
     },
@@ -177,10 +187,7 @@ module.exports = (grunt) => {
       server: {
         options: {
           open: true,
-          base: ["temp"],
-          routes: {
-            "/node_modules": "node_modules",
-          },
+          base: ["temp"]
         },
       },
     },
