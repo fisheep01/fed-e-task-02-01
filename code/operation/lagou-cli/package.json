@@ -1,0 +1,11 @@
+{
+  "name": "lagou-cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "bin": "cli.js",
+  "license": "MIT",
+  "dependencies": {
+    "art-template": "^4.13.2",
+    "inquirer": "^7.1.0"
+  }
+}
